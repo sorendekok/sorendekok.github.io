@@ -1,1 +1,79 @@
 /* Make comments with Alt-Shift-A */
+
+@font-face {
+    font-family: 'Salma Pro';
+    src: url(./salma-pro-font/SalmaproMedium-yw9ad.otf);
+    /* 'Salma Pro' is a font of the foundry "Alifinart Studio"; www.behance.net/alifinart. */
+  }
+
+  @font-face {
+    font-family: 'Mike Sans';
+    src: url(./mike-sans-font/MikeSansFree-MVDLP.ttf);
+    /* 'Mike Sans' is a font freely allowed for commercial use. */
+  }
+
+* {
+    padding-left: 3.5rem;
+    padding-right: 3.5rem;
+    
+}
+
+body {
+    color: rgb(82, 173, 253);
+    background-color: lightgoldenrodyellow;
+    font-family: 'Salma Pro';
+    border-style: groove;
+    border-radius: 7.5rem;
+    border-color: rgb(82, 173, 253);
+    border-width: 0.5rem;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 1.15rem;
+}
+
+h1 {
+    color: teal;
+    font-family: 'Mike Sans';
+    letter-spacing: 0.25rem;
+    text-align: center;
+}
+
+h3 {
+    color:teal;
+}
+
+img {
+    height: auto;
+    width: 35rem;
+}
+
+#w2, #w3 {
+    border-style: groove;
+    border-radius: 3.5rem;
+    border-color: rgb(82, 173, 253);
+    border-width: 0.25rem;
+}
+
+h4 {
+    color: teal;
+}
+
+a:link {
+    color: blue;
+    }
+a:visited {
+    color: purple;
+    }
+a:hover {
+    color: teal;
+    }
+a:active {
+    color: teal;
+    }
+
+a {
+    padding-left:0rem !important;
+    padding-right:0rem !important;
+}
