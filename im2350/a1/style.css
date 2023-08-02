@@ -1,35 +1,35 @@
 /* Make comments with Alt-Shift-A */
 
-@font-face {
+@font-face {                    /* Append the first font in the same folder */
     font-family: 'Salma Pro';
     src: url(./salma-pro-font/SalmaproMedium-yw9ad.otf);
     /* 'Salma Pro' is a font of the foundry "Alifinart Studio"; www.behance.net/alifinart. */
   }
 
-  @font-face {
+  @font-face {                  /* Append the second font in the same folder */
     font-family: 'Mike Sans';
     src: url(./mike-sans-font/MikeSansFree-MVDLP.ttf);
     /* 'Mike Sans' is a font freely allowed for commercial use. */
   }
 
-* {
+* {                             /* A padding on both sides of the page for all items */
     padding-left: 3.5rem;
     padding-right: 3.5rem;
     
 }
 
 body {
-    color: rgb(82, 173, 253);
-    background-color: lightgoldenrodyellow;
+    color: rgb(82, 173, 253);                 /* Color of regular text */
+    background-color: lightgoldenrodyellow;     
     font-family: 'Salma Pro';
-    border-style: groove;
-    border-radius: 7.5rem;
+    border-style: groove;  
+    border-radius: 7.5rem;                      /* Rounded edges */
     border-color: rgb(82, 173, 253);
     border-width: 0.5rem;
-    display:flex;
+    display:flex;                               /* Align children elements with parent */
     flex-direction: column;
     justify-content: space-around;
-    align-items: center;
+    align-items: center;                        /* Align at center of the page */
     font-size: 1.15rem;
 }
 
@@ -40,40 +40,43 @@ h1 {
     text-align: center;
 }
 
-h3 {
+h3, h4 {
     color:teal;
 }
 
 img {
-    height: auto;
+    height: auto;           /* Have height adjust based on the width to keep the correct size ratio */
     width: 35rem;
+    padding-left:0rem !important;       /* Overriding the padding with !important to make sure the characteristics are only activated when actually hovering over the image */
+    padding-right:0rem !important;
 }
 
-#w2, #w3 {
+img:hover {                 /* Indicate that the image is interactable */
+    opacity: 0.7;           
+    filter: blur(4px);
+}
+
+.w2and3headers {            /* A border visual for the headers of both weeks */
     border-style: groove;
     border-radius: 3.5rem;
     border-color: rgb(82, 173, 253);
     border-width: 0.25rem;
 }
 
-h4 {
-    color: teal;
-}
-
-a:link {
-    color: blue;
-    }
-a:visited {
-    color: purple;
-    }
-a:hover {
-    color: teal;
-    }
-a:active {
-    color: teal;
-    }
-
-a {
-    padding-left:0rem !important;
+a, i {
+    padding-left:0rem !important;       /* Overriding the padding with !important to make sure the link fits nicely in the text without big gaps */
     padding-right:0rem !important;
 }
+
+a:link {                                /* Color of the unvisited link */
+    color: blue;
+    }
+a:visited {                             /* Color of the visited link */
+    color: purple;
+    }
+a:hover {                               /* Color of the link when hovered on */
+    color: teal;
+    }
+a:active {                              /* Color of the link when activated */
+    color: yellow;
+    }
