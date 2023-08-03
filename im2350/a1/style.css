@@ -56,7 +56,7 @@ img:hover {                 /* Indicate that the image is interactable */
     filter: blur(4px);
 }
 
-.w2and3headers {            /* A border visual for the headers of both weeks */
+.mainheaders {            /* A border visual for the headers of both weeks */
     border-style: groove;
     border-radius: 3.5rem;
     border-color: rgb(82, 173, 253);
