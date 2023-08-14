@@ -1,0 +1,66 @@
+/* Make comments with Alt-Shift-A */
+
+* {
+    box-sizing: border-box;          /* All boxes will be sized including the border width */
+    margin: 0;
+}
+
+:root {                              /* Applies to HTML root (<html> tags) */
+    --col01: rgb(230, 215, 160);
+    --col02: rgb(218, 233, 221);
+    --col03: rgb(131, 141, 133);
+    --border: solid .15rem var(--col03);
+}
+
+h1 {
+    color: var(--col01);
+    background-image: linear-gradient(90deg, var(--col03), var(--col01));
+}
+
+.FlexExWrapper{
+    background-color: var(--col01);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: stretch;
+    gap: .5rem;
+  }
+  
+  #example-one, #example-two, #example-three, #example-four, #example-five, #example-six, #example-seven {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    gap: .5rem;
+  }
+  
+  .nested-example{
+    background-image: linear-gradient(var(--col02), var(--col03));
+    flex-grow: .06;
+    border: var(--border);
+  }
+
+  #curve1, #curve6, #curve11, #curve16 {
+    border-top-right-radius: 50px;
+  }
+
+  #curve2, #curve5, #curve7, #curve10 {
+    border-top-left-radius: 50px;
+  }
+
+  #curve3, #curve8, #curve12, #curve14 {
+    border-bottom-left-radius: 50px;
+  }
+
+  #curve4, #curve9, #curve13, #curve15 {
+    border-bottom-right-radius: 50px;
+  }
+
+  #remove {
+    background-image: var(--col01);
+    border-color: var(--col01);
+  }
+
+  .test {
+    flex-grow: 1.5;
+  }
