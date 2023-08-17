@@ -12,16 +12,20 @@
 /* you're welcome to change the colours if you want or any of the other general page style */
 :root{
   --col-01:#518787;
-  --col-02:#f0f6f0;
+  --col-02:#faebd7;
   --col-03:#5252ff;
   --col-04:#b6e878;
+  --col-05:#034d4d;
+  --col-06:#f4dd5e;
+  --col-07:#7ebaba;
   --border: 1px solid var(--col-02);
+  --border-02: .5rem groove var(--col-06);
 }
 
 body{
   display: flex;
   flex-direction: column;
-  background-color: var(--col-01);
+  background-color: var(--col-07);
   color: var(--col-02);
   padding: 2vw;
 }
@@ -37,22 +41,31 @@ body{
 }
 
 .FilterSection{
-
+background-image: linear-gradient(90deg, var(--col-05), var(--col-07));
 }
 
 .FilterBox{
-
 }
 
 .FilterButton{
-
+  background-color: var(--col-04);
+  border-radius: 1rem;
+  border-style: double;
+  border-color: var(--col-02);
+  color: var(--col-05);
 }
+
+.FilterButton:hover{
+  background-color: var(--col-06);
+  opacity: 0.7;
+}
+
 /* 
   this class will be applied to the last filter button clicked - remember because it's below .FilterButton it will overwrite
   any duplicate properties
 */
 .SelectedFilter{
-  background-color: rgb(244, 221, 94);
+  background-color: var(--col-06);
 }
 
 .RecipeLink{
@@ -60,7 +73,10 @@ body{
 }
 
 .RecipeName{
-
+  color: var(--col-04);
+  text-shadow: 0rem 0rem 1rem var(--col-05);
+  background-image: linear-gradient(90deg, var(--col-07), var(--col-05), var(--col-07));
+  text-align: center;
 }
 
 .Author{
@@ -72,7 +88,8 @@ body{
 }
 
 .RecipeImg{
-
+border: var(--border-02);
+border-radius: 5rem;
 }
 
 .Attribution{
@@ -116,7 +133,7 @@ body{
 }
 
 .SpecialEquipment{
-
+  text-decoration: underline;
 }
 
 p {
@@ -124,10 +141,16 @@ p {
   padding-bottom: 1rem;
 }
 
-h1 {
-  color: #b6e878;
+div {
+  color: var(--col-02);
+  text-shadow: 0rem 0rem 1rem var(--col-05);
 }
 
-div {
-  color:antiquewhite;
+summary {
+  color: var(--col-02);
+}
+
+h1 {
+  color: var(--col-02);
+  text-shadow: 0rem 0rem 1rem var(--col-05);
 }

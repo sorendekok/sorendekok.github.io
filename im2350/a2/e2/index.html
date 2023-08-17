@@ -16,20 +16,11 @@
 
   <body>
 
-    <div>Interactive Media 1 Recipe List</div>
+    <h1>Interactive Media 1 Recipe List</h1>
 
     <hr /> 
 
     <div class="FilterSection">     
-
-      <details class="FilterBox">
-        <summary>Author</summary>
-        <button class="FilterButton" onclick='filterRecipes("author", "KLA", this)'>J. Kenji López-Alt</button>
-        <button class="FilterButton" onclick='filterRecipes("author", "M", this)'>Maangchi</button>
-        <button class="FilterButton" onclick='filterRecipes("author", "HM", this)'>Hetty McKinnon</button>
-        <button class="FilterButton" onclick='filterRecipes("author", "CLM", this)'>Carla Lalli Music</button>
-        <button class="FilterButton" onclick='resetFilter()'>All Authors</button>
-      </details>
 
       <details class="FilterBox">
         <summary>Cuisine</summary>
@@ -41,7 +32,7 @@
         <button class="FilterButton" onclick='filterRecipes("cuisine", "northafrican", this)'>North African</button>
         <button class="FilterButton" onclick='filterRecipes("cuisine", "russian", this)'>Russian</button>
         <button class="FilterButton" onclick='filterRecipes("cuisine", "french", this)'>French</button>
-        <button class="FilterButton" onclick='resetFilter()'>All Cuisines</button>
+        <button class="FilterButton" onclick='resetFilter()'>Reset Cuisines</button>
       </details>
 
       <details class="FilterBox">
@@ -49,7 +40,7 @@
         <button class="FilterButton" onclick='filterRecipes("dietary", "vegetarian", this)'>Vegetarian</button>
         <button class="FilterButton" onclick='filterRecipes("dietary", "meatbased", this)'>Meat Based</button>
         <button class="FilterButton" onclick='filterRecipes("dietary", "pescetarian", this)'>Pescetarian</button>
-        <button class="FilterButton" onclick='resetFilter()'>All Dietary options</button>
+        <button class="FilterButton" onclick='resetFilter()'>Reset Dietary options</button>
       </details>
 
       <details class="FilterBox">
@@ -58,7 +49,15 @@
         <button class="FilterButton" onclick='filterRecipes("course", "salad", this)'>Salad</button>
         <button class="FilterButton" onclick='filterRecipes("course", "snack", this)'>Snack</button>
         <button class="FilterButton" onclick='filterRecipes("course", "dessert", this)'>Dessert</button>
-        <button class="FilterButton" onclick='resetFilter()'>All Course Types</button>
+        <button class="FilterButton" onclick='resetFilter()'>Reset Course Types</button>
+      </details>
+
+      <details class="FilterBox">
+        <summary>Cooking Time</summary>
+        <button class="FilterButton" onclick='filterRecipes("time", "short", this)'>Quick fixes</button>
+        <button class="FilterButton" onclick='filterRecipes("time", "mid", this)'>Intermediate Creations</button>
+        <button class="FilterButton" onclick='filterRecipes("time", "long", this)'>Culinary Journeys</button>
+        <button class="FilterButton" onclick='resetFilter()'>Reset Cooking times</button>
       </details>
 
     </div>
@@ -68,10 +67,10 @@
     <!-- Recipe 1 -->
     <!-- these are fine to leave as <div>s -->
     <div class="RecipeBox"
-         data-author="HM"
          data-cuisine="italian"
          data-dietary="vegetarian"
          data-course="main"
+         data-time="short"
     >
     <!-- 
       the above tag already has one custom data category called author - to get the filter to work with other catgories you'll need
@@ -125,10 +124,10 @@
     
     <!-- Recipe 2 -->
     <div class="RecipeBox"
-         data-author="HM"
          data-cuisine="italian"
          data-dietary="vegetarian"
          data-course="salad"
+         data-time="mid"
     >
 
       <h1 class="RecipeName">Caprese Salad with Slow-Roasted Tomatoes, Rocket and Basil Gremolata</h1>
@@ -173,10 +172,10 @@
     
     <!-- Recipe 3 -->
     <div class="RecipeBox"
-         data-author="KLA"
          data-cuisine="fusion"
          data-dietary="vegetarian"
          data-course="snack"
+         data-time="short"
     >
 
       <h1 class="RecipeName">Crispy Enoki and Onion Fritters with Thai Curry Mayo Recipe</h1>
@@ -215,21 +214,22 @@
 
       <div class="Dietary">Dietary: Vegetarian</div>
 
-      <div class="SpecialEquipment">Special Equipment: </div>
+      <div class="SpecialEquipment">Special Equipment: N/A</div>
 
     </div>
     
     <!-- Recipe 4 -->
     <div class="RecipeBox"
-         data-author="M"
          data-cuisine="korean"
          data-dietary="vegetarian"
          data-course="snack"
+         data-time="long"
     >
 
       <h1 class="RecipeName">Fluffy Steamed Buns filled with Sweet Red Beans</h1>
 
       <div class="Author">Author: Maangchi</div>
+      <div class="Publisher">Publisher: Maangchi</div>
 
       <div class="RecipeImageContainer">
 
@@ -249,8 +249,6 @@
 
       </div>
 
-      <div class="Publisher">Publisher: Maangchi</div>
-
       <div class="Cuisine">Cuisine: Korean</div>
 
       <div class="TimeToCook">Time to Cook: ~ 11 hours preperation. 15 mins to cook</div>
@@ -263,16 +261,16 @@
 
       <div class="Dietary">Dietary: Vegetarian</div>
 
-      <div class="SpecialEquipment">Special Equipment: </div>
+      <div class="SpecialEquipment">Special Equipment: N/A</div>
 
     </div>
     
     <!-- Recipe 5 -->
     <div class="RecipeBox"
-         data-author="KLA"
          data-cuisine="western"
          data-dietary="vegetarian"
          data-course="snack"
+         data-time="mid"
     >
 
 
@@ -310,16 +308,16 @@
 
       <div class="Dietary">Dietary: Vegetarian</div>
 
-      <div class="SpecialEquipment">Special Equipment: </div>
+      <div class="SpecialEquipment">Special Equipment: N/A</div>
 
     </div>
     
     <!-- Recipe 6 -->
     <div class="RecipeBox"
-         data-author="KLA"
          data-cuisine="fusion"
          data-dietary="vegetarian"
          data-course="snack"
+         data-time="short"
     >
 
       <h1 class="RecipeName">Grilled Cheese With Kimchi Recipe</h1>
@@ -359,16 +357,16 @@
 
       <div class="Dietary">Dietary: Vegetarian</div>
 
-      <div class="SpecialEquipment">Special Equipment: </div>
+      <div class="SpecialEquipment">Special Equipment: N/A</div>
 
     </div>
     
     <!-- Recipe 7 -->
     <div class="RecipeBox"
-         data-author="CLM"
          data-cuisine="american"
          data-dietary="meatbased"
          data-course="main"
+         data-time="long"
     >
 
       <h1 class="RecipeName">Hands-Off Pork and Beans</h1>
@@ -407,16 +405,16 @@
 
       <div class="Dietary">Dietary: Meat based</div>
 
-      <div class="SpecialEquipment">Special Equipment: </div>
+      <div class="SpecialEquipment">Special Equipment: N/A</div>
 
     </div>
     
     <!-- Recipe 8 -->
     <div class="RecipeBox"
-         data-author="M"
          data-cuisine="korean"
          data-dietary="vegetarian"
          data-course="snack"
+         data-time="short"
     >
 
       <h1 class="RecipeName">Kimchi Pancake</h1>
@@ -454,16 +452,16 @@
 
       <div class="Dietary">Dietary: Vegetarian</div>
 
-      <div class="SpecialEquipment">Special Equipment: </div>
+      <div class="SpecialEquipment">Special Equipment: N/A</div>
 
     </div>
     
     <!-- Recipe 9 -->
     <div class="RecipeBox"
-         data-author="KLA"
          data-cuisine="northafrican"
          data-dietary="vegetarian"
          data-course="main"
+         data-time="short"
     >
 
       <h1 class="RecipeName">Shakshuka (North African–Style Poached Eggs in Spicy Tomato Sauce)</h1>
@@ -501,16 +499,16 @@
 
       <div class="Dietary">Dietary: Vegetarian</div>
 
-      <div class="SpecialEquipment">Special Equipment: </div>
+      <div class="SpecialEquipment">Special Equipment: N/A</div>
 
     </div>
     
     <!-- Recipe 10 -->
     <div class="RecipeBox"
-         data-author="CLM"
          data-cuisine="italian"
          data-dietary="pescetarian"
          data-course="main"
+         data-time="mid"
     >
 
       <h1 class="RecipeName">Spaghetti with Melted Cauliflower Sauce</h1>
@@ -548,16 +546,16 @@
 
       <div class="Dietary">Dietary: Pescatarian</div>
 
-      <div class="SpecialEquipment">Special Equipment: </div>
+      <div class="SpecialEquipment">Special Equipment: N/A</div>
 
     </div>
     
     <!-- Recipe 11 -->
     <div class="RecipeBox"
-         data-author="M"
          data-cuisine="korean"
          data-dietary="meatbased"
          data-course="main"
+         data-time="mid"
     >
 
       <h1 class="RecipeName">Sweet, Sour, & Spicy Korean Fried Chicken</h1>
@@ -597,16 +595,16 @@
 
       <div class="Dietary">Dietary: Meat based</div>
 
-      <div class="SpecialEquipment">Special Equipment: </div>
+      <div class="SpecialEquipment">Special Equipment: N/A</div>
 
     </div>
     
     <!-- Recipe 12 -->
     <div class="RecipeBox"
-         data-author="KLA"
          data-cuisine="russian"
          data-dietary="meatbased"
          data-course="main"
+         data-time="mid"
     >
 
       <h1 class="RecipeName">The Ultimate Beef Stroganoff Recipe</h1>
@@ -646,16 +644,16 @@
 
       <div class="Dietary">Dietary: Meat based</div>
 
-      <div class="SpecialEquipment">Special Equipment: </div>
+      <div class="SpecialEquipment">Special Equipment: N/A</div>
 
     </div>
     
     <!-- Recipe 13 -->
     <div class="RecipeBox"
-         data-author="CLM"
          data-cuisine="french"
          data-dietary="vegetarian"
          data-course="dessert"
+         data-time="long"
     >
 
       <h1 class="RecipeName">Vanilla-Brown Butter Pear Tart</h1>
@@ -701,10 +699,10 @@
 
     <!-- Recipe 14 -->
     <div class="RecipeBox"
-         data-author="HM"
          data-cuisine="fusion"
          data-dietary="vegetarian"
          data-course="main"
+         data-time="short"
     >
 
       <h1 class="RecipeName">Vegetarian Carbonara with Mushrooms, Miso and Parmesan</h1>
@@ -743,7 +741,7 @@
 
       <div class="Dietary">Dietary: Vegetarian</div>
 
-      <div class="SpecialEquipment">Special Equipment: </div>
+      <div class="SpecialEquipment">Special Equipment: N/A</div>
 
     </div>
 
