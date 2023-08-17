@@ -42,6 +42,7 @@ body{
 
 .FilterSection{
 background-image: linear-gradient(90deg, var(--col-05), var(--col-07));
+text-align: left !important;
 }
 
 .FilterBox{
@@ -80,7 +81,7 @@ background-image: linear-gradient(90deg, var(--col-05), var(--col-07));
 }
 
 .Author{
-
+  font-style: italic;
 }
 
 .RecipeImageContainer{
@@ -88,8 +89,8 @@ background-image: linear-gradient(90deg, var(--col-05), var(--col-07));
 }
 
 .RecipeImg{
-border: var(--border-02);
-border-radius: 5rem;
+  border: var(--border-02);
+  border-radius: 5rem;
 }
 
 .Attribution{
@@ -97,7 +98,7 @@ border-radius: 5rem;
 }
 
 .Publisher{
-
+  font-style: italic;
 }
 
 .Cuisine{
@@ -139,11 +140,15 @@ border-radius: 5rem;
 p {
   font-size: xx-small;
   padding-bottom: 1rem;
+  text-align: center;
 }
 
 div {
   color: var(--col-02);
   text-shadow: 0rem 0rem 1rem var(--col-05);
+  align-items: center;
+  padding-top: .25rem;
+  padding-bottom: .25rem;
 }
 
 summary {
@@ -153,4 +158,8 @@ summary {
 h1 {
   color: var(--col-02);
   text-shadow: 0rem 0rem 1rem var(--col-05);
+}
+
+.linktext {
+  border-bottom: 1px dashed var(--col-02);
 }
