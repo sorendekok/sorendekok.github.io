@@ -18,6 +18,7 @@
   --col-04:#b6e878;
   --col-05:#c9f583;
   --col-06:rgb(108, 213, 178);
+  --col-07:rgb(215, 0, 0);
   font-size: 16px;
   /* scroll behaviour makes the <a> links to ids scroll to position over time rather than immediately */
   scroll-behavior: smooth;
@@ -156,6 +157,18 @@ li ul{
   justify-content: center;
   z-index: 1;
 }
+#foreground-layer-after{
+  grid-column: 1/2;
+  grid-row: 1/2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  display: none;
+  color: var(--col-01);
+  animation: 10s textAnimation ease-in-out;
+}
 /* changing button to look like a link */
 #load-link{
   line-height: 1.5rem;
@@ -180,49 +193,31 @@ li ul{
   height: 100%;
   background-color: red;
   border-radius: 100%;
-  border-top: 1rem groove rgb(235, 0, 0);
-  border-bottom: 1rem groove rgb(235, 0, 0);
-  /* animation: 10s turningAnimation ease-in-out; */
+  border-top: 1.25rem groove var(--col-07);
+  border-bottom: 1.25rem groove var(--col-07);
   animation: 10s loadingAnimation ease-in-out;
   /* we also initially set display to none so it only shows once the link is clicked */
   display: none;
+  box-shadow: 0px 0px 2rem var(--col-07);
 }
-
-/* @keyframes turningAnimation {
-  50% {
-    transform: rotate(90deg);
-  }
-} */
 
 @keyframes loadingAnimation {
   0% {
     transform: scale(0);
   }
   85% {
-    transform: scale(1);
+    transform: scale(1) rotate(1080deg);
   }
-  /* 90% {
-    transform: rotate(180deg);
-  } */
   100% {
-    transform: rotate(180deg);
+    
   }
 }
-
-/* @keyframes turningAnimation {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(180deg);
-  }
-} */
 
 @keyframes textAnimation {
   0% {
     color: var(--col-01);
   }
-  90% {
+  100% {
     color: var(--col-02);
   }
 }

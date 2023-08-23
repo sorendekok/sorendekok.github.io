@@ -32,7 +32,7 @@
     </div>
 
     <div id="foreground-layer">
-      <h1 id="titlename">Haruomi Hosono</h1>
+      <h1 id="titlename-before">Haruomi Hosono</h1>
       <!--
         Typically I'd use an <a> here but as we're faking a load time I'm using a <button> instead.  If it was an 
         <a> I would leave off the target attribute so that it would redirect the current tab.
@@ -42,6 +42,9 @@
         amount of time it takes in ms and a url to redirect to.
       -->
       <button id="load-link" onclick="loadPageAfterDelay(10000, './hosono.html')">Click to Load Page</button>
+    </div>
+    <div id="foreground-layer-after">
+      <h1 id="titlename-after">Haruomi Hosono</h1>
     </div>
       <!--
         This is a div we're using for the throbber - if we wanted to do a % based loading bar there is an element 

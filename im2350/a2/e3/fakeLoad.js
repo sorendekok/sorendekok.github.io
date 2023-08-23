@@ -9,6 +9,9 @@ function loadPageAfterDelay(loadTime, url){
   document.getElementById("load-link").style.display = 'none';
   // show throbber
   document.getElementById("load-throbber").style.display = 'block';
+
+  document.getElementById("foreground-layer").style.display = 'none';
+  document.getElementById("foreground-layer-after").style.display = 'block';
   /* if you want to add or change anything else once link is clicked below here is where you'd do so */
   /* then the second part is actually following the link using a setTimeout() */
   /*
