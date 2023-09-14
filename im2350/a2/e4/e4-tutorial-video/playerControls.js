@@ -64,6 +64,7 @@ videoElement.addEventListener("ended", () => {
 // by combining play and pause into the same function i'm able to make sure it does what i want - if the media is already playing i only 
 // ever want use .pause() (as pausing an already paused video doesn't really make sense) 
 // the same goes if the media is paused or stopped i only want use .play()
+
 function playPause(){
   // the following if statement checks to see if the media is currently paused OR if the media has finshed playing - || inside of an if 
   // statement like this is how we write an OR conditional, if either of these things are true it'll trigger the block of code
@@ -179,6 +180,15 @@ function muteUnmute(){
 
 muteButton.addEventListener('click', muteUnmute);
 
+
+/* FULLSCREEN / SMALLSCREEN */
+/*
+I want to adjust the video to fullscreen or 'smallscreen' (I don't know if there's a word for this)
+Signifier - I want to click a button
+Affordance - I want to toggle between fullscreen and smallscreen
+Feedback - I want the button logo to describe what will happen when I press it via an animation
+*/
+
 /* this is my function to toggle between fullscreen and smallscreen */
 function fullScreen(){
   /* check if working */
@@ -201,19 +211,33 @@ function fullScreen(){
 fullScreenButton.addEventListener('click', fullScreen);
 
 
+/* LICENSE / NO LICENSE */
+/*
+I want to toggle between showing and hiding the licenses
+Signifier - I want to click a button
+Affordance - I want to toggle between showing and hiding licenses
+Feedback - I want to update the button text to describe what will happen when I press it
+*/
+
 /* this is my function to toggle between license revealed/hidden */
 function showLicense(){
   /* check if working */
   /* console.log("hiding/showing licenses is working"); */
   /* create a variable defined by the element with id="license" */
   var license = document.getElementById("license");
+  /* create a variable defined by the element with id="licenseButton" */
+  var licenseButton = document.getElementById("licenseButton");
   /* if the license is displayed, hide on click */
   if(license.style.display == "block"){
     license.style.display = "none";
+    /* if license is hidden, change text on button to "click here to view licenses" */
+    licenseButton.innerHTML = "Click here to view licenses";
   }
   /* if the license is hidden, display on click */
   else{
     license.style.display = "block";
+    /* if license is shown, change text on button to "click here to hide licenses" */
+    licenseButton.innerHTML = "Click here to hide licenses";
   }
 }
 
