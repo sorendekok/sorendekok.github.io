@@ -4,7 +4,7 @@
   viewBox="0 0 110 110"
   xmlns="http://www.w3.org/2000/svg">
 
-  <path d="M 10,42
+  <path fill="gold" d="M 10,42
            A 2,2 90 0 1 12,40
            L 15,40 30,15 35,15
            Q 38,50 35,85 
@@ -12,13 +12,13 @@
            A 2,2 90 0 1 10,58
            Z" />
   
-  <path fill="transparent" stroke="black" stroke-linecap="round" stroke-width="8"
+  <path fill="transparent" stroke="gold" stroke-linecap="round" stroke-width="8"
         d=" M 45,35
             Q 55,50 45,65" />
-  <path fill="transparent" stroke="black" stroke-linecap="round" stroke-width="8"
+  <path fill="transparent" stroke="gold" stroke-linecap="round" stroke-width="8"
         d=" M 55,22.5
             Q 77.33,50 55,77.5" />
-  <path fill="transparent" stroke="black" stroke-linecap="round" stroke-width="8"
+  <path fill="transparent" stroke="gold" stroke-linecap="round" stroke-width="8"
         d=" M 65,10
         Q 101.66,50 65,90" />       
 </svg>

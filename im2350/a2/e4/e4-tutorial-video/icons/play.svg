@@ -4,5 +4,5 @@
   viewBox="0 0 110 110"
   xmlns="http://www.w3.org/2000/svg"
   >
-    <polygon points="24,10 87,55 24,100" />       
+    <polygon fill="gold" points="24,10 87,55 24,100" />       
 </svg>

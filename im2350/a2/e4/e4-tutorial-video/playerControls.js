@@ -189,7 +189,7 @@ function fullScreen(){
     /* if fullScreen is true set to false */
     videoElement.requestFullscreen() = false;
     /* change the icon to fullscreen*/
-    fullscreenButton.style.backgroundImage = "url('./icons/fullScreen.svg')";
+    fullScreenButton.style.backgroundImage = "url('./icons/fullScreen.svg')";
   } else {
     /* if fullScreen is false set to true */
     videoElement.requestFullscreen() = true;
@@ -198,7 +198,26 @@ function fullScreen(){
   }
 }
 
-fullscreenButton.addEventListener('click', fullScreen);
+fullScreenButton.addEventListener('click', fullScreen);
+
+
+/* this is my function to toggle between license revealed/hidden */
+function showLicense(){
+  /* check if working */
+  /* console.log("hiding/showing licenses is working"); */
+  /* create a variable defined by the element with id="license" */
+  var license = document.getElementById("license");
+  /* if the license is displayed, hide on click */
+  if(license.style.display == "block"){
+    license.style.display = "none";
+  }
+  /* if the license is hidden, display on click */
+  else{
+    license.style.display = "block";
+  }
+}
+
+licenseButton.addEventListener('click', showLicense);
 
 /* HELPER FUNCTIONS */
 

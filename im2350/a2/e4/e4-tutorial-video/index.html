@@ -19,7 +19,7 @@
       <!-- this element holds the video element and the overlay -->
       <div class="video-element-wrapper">
 
-        <video id="videoElement" controls>
+        <video id="videoElement" poster="./thumbnail.png" controls>
           <source src="https://thelongesthumstore.sgp1.cdn.digitaloceanspaces.com/IM-2250/berry-bunch_handheld-windmill-fan.mp4" type="video/mp4">
         </video>
 
@@ -35,21 +35,25 @@
 
         <progress class="video-progress-bar" id="progressBar" value="0"></progress>
 
-        <button class="video-control-button" id="fullscreenButton"></button>
+        <button class="video-control-button" id="fullScreenButton"></button>
 
       </div>
 
-      <p class="attribution">
-        "<a target="_blank" rel="noopener noreferrer" href="https://vimeo.com/719005078">Art Time, Handheld Windmill / Fan</a>" by 
-        <a target="_blank" rel="noopener noreferrer" href="https://vimeo.com/berrybunchfamily">theBerry Bunch</a> is licensed under 
-        <a target="_blank" rel="noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/?ref=openverse">CC BY-NC 4.0 
-          <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" style="height: 1em; margin-right: 0.125em; display: inline;"></img>
-          <img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" style="height: 1em; margin-right: 0.125em; display: inline;"></img>
-          <img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" style="height: 1em; margin-right: 0.125em; display: inline;"></img>
-        </a>. 
-      </p>  
-
     </div>
+
+    <p>
+      <button id="licenseButton">Click here to view/hide licenses</button>
+    </p>
+
+    <p class="attribution" id="license">
+      "<a target="_blank" rel="noopener noreferrer" href="https://vimeo.com/719005078">Art Time, Handheld Windmill / Fan</a>" by 
+      <a target="_blank" rel="noopener noreferrer" href="https://vimeo.com/berrybunchfamily">theBerry Bunch</a> is licensed under 
+      <a target="_blank" rel="noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/?ref=openverse">CC BY-NC 4.0 
+        <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" style="height: 1em; margin-right: 0.125em; display: inline;"></img>
+        <img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" style="height: 1em; margin-right: 0.125em; display: inline;"></img>
+        <img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" style="height: 1em; margin-right: 0.125em; display: inline;"></img>
+      </a>. 
+    </p>  
 
   </body>
 

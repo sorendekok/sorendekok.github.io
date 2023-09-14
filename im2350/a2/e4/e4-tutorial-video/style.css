@@ -14,7 +14,18 @@
   --col-04:#b6e878;
   --col-05:#bcbdbc;
   --col-06:#6f6f6f;
+  --col-07:#ceeaab;
+  --col-08:#99cce9;
+  --col-09:#167f7d;
+  --col-10:#0b4645;
+  --col-11:#ffd700;
+  --col-12:#176665;
   --border: 1px solid var(--col-02);
+  --border2: .4rem dashed var(--col-09);
+}
+
+body {
+  background-color: var(--col-07);
 }
 
 .video-player-wrapper{
@@ -22,6 +33,14 @@
   flex-direction: column;
   width: 50%;
   margin: 0 auto;
+  /* indicate that pressing the video itself also results in an action: playing/pausing the video */
+  cursor: pointer;
+  border: var(--border2);
+}
+
+p {
+  text-align: center;
+  padding-top: 5rem;
 }
 
 /* becuase I want to overlay the play icon on the video they need to be in their own wrapper */
@@ -63,12 +82,26 @@
   padding: .1rem;
   border: none;
   cursor: pointer;
+  background-color: var(--col-10);
 }
-.video-control-button:hover{
-  background-color: var(--col-05);
+
+#licenseButton {
+  line-height: 2.5rem;
+  border: .25rem groove var(--col-04);
+  border-radius: 2rem;
+  cursor: pointer;
+  background-color: var(--col-12);
+  color: var(--col-07);
+  font-size: 1rem;
 }
-.video-control-button:active{
-  background-color: var(--col-06);
+
+.video-control-button:hover, #licenseButton:hover{
+  background-color: var(--col-09);
+  transition: background-color 500ms ;
+}
+.video-control-button:active, #licenseButton:active{
+  background-color: var(--col-11);
+  transition: background-color 10ms;
 }
 .button-icon{
   pointer-events: none;
@@ -82,8 +115,31 @@
   background-image: url('./icons/mute.svg');
 }
 
-#fullscreenButton{
+#fullScreenButton{
   background-image: url('./icons/fullScreen.svg');
+  /* animation: fullScreenAnimation 2s ease-in-out infinite; */
+}
+
+#fullScreenIcon {
+  animation: fullScreenAnimation 2s ease-in-out infinite;
+  /* scale: 50%;
+  transform: scale(50%); */
+}
+
+#license {
+  display: none;
+}
+
+@keyframes fullScreenAnimation {
+  0% {
+    scale: 1;
+  }
+  50% {
+    scale: 2;
+  }
+  100% {
+    scale: 1;
+  }
 }
 
 .video-progress-bar{
@@ -99,15 +155,29 @@
   box-shadow: 0 1px 2px var(--col-02) inset;
 }
 ::-moz-progress-bar {
-  background-color: var(--col-02);
+  background-color: var(--col-01);
 }
 
 ::-webkit-progress-bar {
-  background-color: var(--col-01);
-  box-shadow: 0 1px 2px var(--col-02) inset;
+  background-color: var(--col-10);
 }
+
+.video-progress-bar:hover::-webkit-progress-bar {
+  background-color: var(--col-12);
+  transition: background-color 500ms;
+}
+
 ::-webkit-progress-value {
-  background-color: var(--col-02);
+  background-color: var(--col-09);
+}
+
+.video-progress-bar:hover::-webkit-progress-value {
+  background-color: var(--col-11);
+  transition: background-color 500ms;
+}
+
+::-webkit-progress-value:active {
+  background-color: var(--col-11);
 }
 
 .timeline-loading{

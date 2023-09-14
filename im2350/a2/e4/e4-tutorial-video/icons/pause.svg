@@ -4,6 +4,6 @@
   viewBox="0 0 110 110"
   xmlns="http://www.w3.org/2000/svg"
   >
-    <rect x="24" y="10" width="25" height="90" />  
-    <rect x="63" y="10" width="25" height="90" />  
+    <rect fill="gold" x="24" y="10" width="25" height="90" />  
+    <rect fill="gold" x="63" y="10" width="25" height="90" />  
 </svg>
