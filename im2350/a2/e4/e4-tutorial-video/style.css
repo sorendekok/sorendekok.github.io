@@ -26,6 +26,10 @@
 
 body {
   background-color: var(--col-07);
+  /* create a pattern of the scissors icon */
+  background-image: url('./icons/scissors.svg');
+  background-size: 20%;
+  background-position: 45% 10%;
 }
 
 .video-player-wrapper{
@@ -84,6 +88,8 @@ p {
   border: none;
   cursor: pointer;
   background-color: var(--col-10);
+  /* do not repeat the svg's in a pattern: just one icon for the button */
+  background-repeat: no-repeat;
 }
 
 /* the button to show / hide licenses */
