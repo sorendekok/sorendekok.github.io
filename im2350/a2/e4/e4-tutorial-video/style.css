@@ -144,6 +144,11 @@ p {
   transition: 500ms;
 }
 
+/* reset the transition time on active to overrride the 500ms transition when hovering */
+#muteButton:active{
+  transition: 10ms;
+}
+
 #fullScreenButton{
   background-image: url('./icons/fullScreen.svg');
   /* reduce size to allow for animation */
