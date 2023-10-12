@@ -1,0 +1,289 @@
+<!DOCTYPE html>         <!-- Make comments with Alt-Shift-A -->
+
+<html lang="en">
+
+<!-- 
+    For assignment 3, I have decided to create a browser-based interactive project focused on the interaction of scrolling.
+As per my assignment 2, I have used the action of scrolling to tell a story: in this case, “Oh, the places you’ll go!” by Dr. Seuss.
+The webpage uploaded to Github will not contain this text because of copyright matters, but a separate file with the text will be privately shared.
+With this interaction I have experimented with telling a story in various different ways.
+The prototype has three versions: a short, mid, and long version. All three versions tell the story in a different way and create a different perception of the story.
+The scrolling element is implemented in the circular interactable on the left side of the screen.
+Its animation animates the border and the background. These move up (and the background also back down) to indicate that there is more to be found beyond what you can see at first sight.
+Upon scrolling on this item, the scroll position (between 0 and 214.5) of the scrollbar is used in a JavaScript function.
+This function determines the version of the story that is displayed.
+When scrolled to the appropriate height, the accompanying text will appear animated, enlarging the webpage smoothly.
+This is the case for both the mid and long version.
+The webpage’s background adds a feeling of progress when reading through the story.
+The changing gradient helps the feeling of following the timeline of a story.
+A timeline which naturally expands when scrolling through short, mid, or long version.
+The gradient then expands with it, suggesting the story has become larger.
+
+-->
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="icon" type="image/x-icon" href="./logo.png"> <!-- SA3 - Sören's Assignment 3 -->
+
+        <title>Sören's Assignment 3</title>
+
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js" defer></script> <!-- defer loads the script afterwards -->
+
+    </head>
+
+    <body>
+
+        <h1>Assignment 3: Browser-based Interactive Project</h1>
+        <h3>OART1013 Interactive Media 1</h3>
+        <h2>Sören de Kok - S4028452</h2>
+        <h2 id="storytitle">Oh, the places you'll go!</h2>
+
+        <div id="scroller" onscroll="scrollLevel()"> <!-- a div that represents the interactable. the <br>'s create blank space that allow scrolling -->
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+        </div>
+        
+        <div class="short" id="test"> <!-- div elements with the "short" classname represent the shortest version of the story -->
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br>
+            Ornare arcu odio ut sem nulla pharetra.<br>
+        </div>
+
+        <div class="short">
+            Aliquet bibendum enim facilisis gravida neque convallis a cras semper. <br>
+            Adipiscing tristique risus nec feugiat in. Velit egestas dui id ornare arcu. <br>
+            Ipsum dolor sit amet consectetur adipiscing elit pellentesque. <br>
+            Duis ultricies lacus sed turpis tincidunt id aliquet risus. <br>
+            Proin sed libero enim sed faucibus turpis in.<br>
+        </div>
+
+        <div class="short">
+            Aliquet sagittis id consectetur purus ut faucibus pulvinar. <br>
+            Elementum nibh tellus molestie nunc non blandit massa enim nec. <br>
+            Nulla posuere sollicitudin aliquam ultrices sagittis orci a. <br>
+            Dignissim enim sit amet venenatis urna cursus eget nunc scelerisque. <br>
+            Non quam lacus suspendisse faucibus interdum posuere lorem. <br>
+            Ut tristique et egestas quis ipsum suspendisse.<br>
+        </div>
+
+        <div class="mid"> <!-- div elements with the "mid" classname represent the middle version of the story -->
+            Facilisi morbi tempus iaculis urna id. <br>
+            Elementum facilisis leo vel fringilla est ullamcorper eget. <br>
+            Phasellus egestas tellus rutrum tellus pellentesque eu.<br>
+        </div>
+
+        <div class="mid">
+            Pretium viverra suspendisse potenti nullam ac tortor vitae. <br>
+            Sapien eget mi proin sed libero enim sed.<br>
+        </div>
+
+        <div class="mid">
+            Justo eget magna fermentum iaculis eu non diam phasellus vestibulum. <br>
+            Ornare massa eget egestas purus viverra accumsan. <br>
+            Vestibulum lorem sed risus ultricies tristique.<br>
+        </div class="mid">
+
+        <div>
+            Bibendum at varius vel pharetra vel turpis nunc. <br>
+            Ac orci phasellus egestas tellus rutrum tellus. <br>
+            Enim nunc faucibus a pellentesque sit amet porttitor eget. <br>
+            Turpis tincidunt id aliquet risus feugiat.<br>
+        </div>
+
+        <div class="short">
+            Duis at consectetur lorem donec massa sapien faucibus et.<br>
+        </div>
+
+        <div class="short">
+            Facilisis gravida neque convallis a cras semper. <br>
+            Nulla aliquet porttitor lacus luctus accumsan. <br>
+            A pellentesque sit amet porttitor eget dolor. <br>
+            Ac ut consequat semper viverra nam libero.<br>
+        </div>
+
+        <div class="short">
+            Scelerisque mauris pellentesque pulvinar pellentesque habitant.<br>
+            Vitae congue eu consequat ac felis donec et odio. <br>
+            Amet venenatis urna cursus eget nunc. <br>
+            Tellus cras adipiscing enim eu. <br>
+            Risus ultricies tristique nulla aliquet.<br>
+        </div>
+
+        <div class="long"> <!-- div elements with the "long" classname represent the longest version of the story -->
+            Nulla malesuada pellentesque elit eget gravida cum sociis.<br>
+        </div>
+
+        <div class="long">
+            Lectus nulla at volutpat diam ut venenatis tellus in. <br>
+            Justo nec ultrices dui sapien eget mi proin sed. <br>
+            Donec enim diam vulputate ut pharetra sit. <br>
+            Nunc sed augue lacus viverra. <br>
+            Sit amet tellus cras adipiscing.<br>
+        </div>
+
+        <div class="long">
+            Molestie at elementum eu facilisis sed odio morbi quis. <br>
+            Enim praesent elementum facilisis leo. <br>
+            Amet purus gravida quis blandit. <br>
+            Dui faucibus in ornare quam viverra orci.<br>
+        </div>
+
+        <div class="long">
+            Habitasse platea dictumst vestibulum rhoncus est pellentesque. <br>
+            Sed enim ut sem viverra aliquet eget. <br>
+            Interdum velit euismod in pellentesque massa. <br>
+            Nisl rhoncus mattis rhoncus urna neque viverra justo.<br>
+        </div>
+
+        <div class="long">
+            Egestas diam in arcu cursus euismod quis. <br>
+            Risus ultricies tristique nulla aliquet enim.<br>
+        </div>
+
+        <div class="long">
+            Odio ut sem nulla pharetra diam sit amet nisl. <br>
+            Tellus cras adipiscing enim eu turpis egestas. <br>
+            Et netus et malesuada fames ac. <br>
+            Nisi scelerisque eu ultrices vitae auctor eu. <br>
+            Felis bibendum ut tristique et egestas quis ipsum. <br>
+            Turpis egestas pretium aenean pharetra magna ac placerat vestibulum.<br>
+        </div>
+
+        <div class="long">
+            Sit amet dictum sit amet justo donec enim diam vulputate. <br>
+            Magna ac placerat vestibulum lectus mauris ultrices eros. <br>
+            Et egestas quis ipsum suspendisse ultrices. <br>
+            Ultricies tristique nulla aliquet enim tortor at auctor urna. <br>
+            Senectus et netus et malesuada fames ac turpis egestas.<br>
+        </div>
+
+        <div class="long">
+            YIpsum dolor sit amet consectetur adipiscing elit pellentesque. <br>
+            Sed arcu non odio euismod lacinia at quis risus. <br>
+            Odio morbi quis commodo odio. <br>
+            Vel fringilla est ullamcorper eget nulla facilisi. <br>
+            Sit amet consectetur adipiscing elit duis tristique. <br>
+            Pharetra magna ac placerat vestibulum.<br>
+        </div>
+
+        <div class="long">
+            Phasellus faucibus scelerisque eleifend donec pretium vulputate sapien nec sagittis. <br>
+            Tristique senectus et netus et. <br>
+            Morbi non arcu risus quis varius quam. <br>
+            Tortor consequat id porta nibh venenatis. <br>
+            Blandit libero volutpat sed cras ornare. <br>
+            Neque sodales ut etiam sit.<br>
+        </div>
+
+        <div class="long">
+            Cras fermentum odio eu feugiat pretium nibh. <br>
+            In ante metus dictum at tempor commodo. <br>
+            Aenean vel elit scelerisque mauris pellentesque pulvinar pellentesque habitant. <br>
+            Posuere lorem ipsum dolor sit amet consectetur adipiscing. <br>
+            Neque gravida in fermentum et sollicitudin ac orci phasellus.<br>
+        </div>
+
+        <div class="long">
+            Nunc aliquet bibendum enim facilisis gravida neque convallis a cras.<br>
+        </div>
+
+        <div class="short">
+            Elementum tempus egestas sed sed risus pretium quam vulputate dignissim. <br>
+            Habitasse platea dictumst quisque sagittis purus.<br>
+        </div>
+
+        <div class="short">
+            Tortor id aliquet lectus proin nibh nisl condimentum id venenatis. <br>
+            Est velit egestas dui id ornare arcu. <br>
+            Et malesuada fames ac turpis egestas sed.<br>
+        </div>
+
+        <div class="short">
+            Urna id volutpat lacus laoreet. <br>
+            In dictum non consectetur a erat nam. <br>
+            Volutpat est velit egestas dui id ornare.<br>
+        </div>
+
+        <div class="long">
+            Facilisis magna etiam tempor orci eu lobortis. <br>
+            Turpis egestas sed tempus urna et pharetra pharetra massa massa.<br>
+        </div>
+
+        <div class="long">
+            Ante metus dictum at tempor commodo ullamcorper. <br>
+            Eget lorem dolor sed viverra ipsum nunc. <br>
+            A cras semper auctor neque vitae tempus.<br>
+        </div>
+
+        <div class="long">
+            Nulla malesuada pellentesque elit eget gravida cum. <br>
+            Etiam non quam lacus suspendisse faucibus interdum.<br>
+        </div>
+
+        <div class="long">
+            Ac turpis egestas maecenas pharetra convallis posuere. <br>
+            Mi proin sed libero enim sed faucibus. <br>
+            At tempor commodo ullamcorper a. <br>
+            A iaculis at erat pellentesque. <br>
+            Amet risus nullam eget felis eget nunc lobortis mattis. <br>
+            Elementum eu facilisis sed odio. <br>
+            Aliquet eget sit amet tellus cras adipiscing.<br>
+        </div>
+
+        <div class="mid">
+            Sit amet facilisis magna etiam tempor orci eu. <br>
+            At auctor urna nunc id cursus. <br>
+            In vitae turpis massa sed elementum tempus. <br>
+            In hac habitasse platea dictumst quisque sagittis purus sit. <br>
+            Facilisi cras fermentum odio eu feugiat pretium nibh ipsum. <br>
+            Morbi quis commodo odio aenean sed adipiscing diam.<br>
+        </div>
+
+        <div class="mid">
+            Nam at lectus urna duis convallis convallis. <br>
+            At quis risus sed vulputate odio ut enim blandit volutpat.<br>
+        </div>
+
+        <div class="mid">
+            Ornare aenean euismod elementum nisi quis eleifend quam adipiscing vitae. <br>
+            Egestas diam in arcu cursus euismod quis. <br>
+            Tempus imperdiet nulla malesuada pellentesque elit eget gravida.<br>
+        </div>
+
+        <div class="short">
+            Id volutpat lacus laoreet non curabitur gravida arcu ac. <br>
+            Curabitur gravida arcu ac tortor dignissim convallis aenean et tortor.<br>
+        </div>
+
+        <div class="short">
+            Non quam lacus suspendisse faucibus interdum posuere lorem.<br>
+
+        </div>
+
+        <div class="short">
+            Dictumst vestibulum rhoncus est pellentesque elit ullamcorper. <br>
+            Elementum facilisis leo vel fringilla. <br>
+            Egestas egestas fringilla phasellus faucibus scelerisque. <br>
+            Egestas dui id ornare arcu.<br>
+        </div>
+
+    </body>
+
+</html>

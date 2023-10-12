@@ -139,9 +139,10 @@ p {
 
 #muteButton:hover{
   /* I merged 'mute.svg' and 'unmute.svg' to create 'muteUnmute.svg' */
-  /* the transition indicates that pressing the button will result in muting the video */
-  background-image: url('./icons/muteUnmute.svg');
-  transition: 500ms;
+  /* the animation indicates that pressing the button will result in muting the video */
+  animation: muteAnimation 500ms ease-in-out;
+  /* fill-mode: forwards will make sure the animation will stop on the last frame, holding the muteUnmute icon rather than returning to the mute icon */
+  animation-fill-mode: forwards;
 }
 
 /* reset the transition time on active to overrride the 500ms transition when hovering */
@@ -195,6 +196,16 @@ p {
   }
   100% {
     background-size: 85%;
+  }
+}
+
+/* the mute button's animation */
+@keyframes muteAnimation {
+  0% {
+    background-image: url('./icons/mute.svg');
+  }
+  100% {
+    background-image: url('./icons/muteUnmute.svg');
   }
 }
 

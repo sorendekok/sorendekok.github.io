@@ -1,0 +1,82 @@
+/* Make comments with Alt-Shift-A */
+
+* {
+    text-align: center;
+}
+
+/* the percentages indicate at which position of the entire page this color is found */
+body {
+    background-image: linear-gradient(#ffffe4 0%, #c5eafa 51%, #dbefc3 75%);
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+#storytitle {
+    font-family: 'Brush Script MT', cursive;
+}
+
+/* insert white space after each div */
+div:after {
+    content: "\a";
+    white-space: pre;
+}
+
+#scroller {
+    width: 100px;
+    height: 100px;
+    /* allow scrolling only in y-direction */
+    overflow-x: hidden;
+    overflow-y: auto;
+    border: .5rem solid #536878;
+    border-radius: 100%;
+    background-image: linear-gradient(#afe1af 0%, #f1ee8e 33%, lightblue 66%, #afe1af 100%);
+    /* the background is half the sice of the entire interactable. The animation will now more clearly indicate scrolling */
+    background-size: 50px 50px;
+    background-repeat:repeat;
+    position: fixed;
+    animation: scrollAnimation 3s ease-in-out infinite;
+}
+
+/* light the border from the bottom and suggestively scroll the interactable down and up again */
+@keyframes scrollAnimation {
+    0%{
+        border-bottom-color: aqua;
+        background-position: 1px 1px;
+    }
+    3%{
+        border-left-color: aqua;
+        border-right-color: aqua;
+    }
+    7%{
+        border-top-color: aqua;
+    }
+    20%{
+        background-position: 1px -50px;
+    }
+    40%{
+        background-position: 1px 1px;
+    }
+}
+
+/* do not always play the animation: stop when hovered over */
+#scroller:hover{
+    animation-play-state: paused;
+}
+
+/* animate the text as it appears */
+.mid, .long {
+    display: none;
+    animation: textAnimation 2s ease-in-out;
+}
+
+@keyframes textAnimation {
+    0%{
+        opacity: 0%;
+        font-size: 0%;
+    }
+    15%{
+        font-size: 100%;
+    }
+    50%{
+        opacity: 100%;
+    }
+}
